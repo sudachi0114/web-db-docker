@@ -15,7 +15,7 @@ Go を用いた DB 連携の練習。
 * MySQL
 
 
-### Install MySQL@5,7
+### Install MySQL@5.7
 
 * Install in Mac with brew.
 
