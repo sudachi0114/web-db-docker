@@ -5,9 +5,11 @@ Go を用いた DB 連携の練習。
 ローカルで動いている MySQL に接続してやりとりしてみる。
 
 ## ライブラリ
-* GORM (ORM)
 
-## Require
+* GORM (ORM); `github.com/jinzhu/gorm`
+* Database driver (sqlite); `github.com/mattn/go-sqlite3`
+
+## Requires
 
 * Go
 * MySQL
