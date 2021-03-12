@@ -7,7 +7,7 @@ Go を用いた DB 連携の練習。
 ## ライブラリ
 
 * GORM (ORM); `github.com/jinzhu/gorm`
-* Database driver (sqlite); `github.com/mattn/go-sqlite3`
+* Database driver (mysql); `github.com/go-sql-driver/mysql`
 
 ## Requires
 

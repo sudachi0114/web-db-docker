@@ -3,12 +3,23 @@ package main
 import (
 	"fmt"
 
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
-	_ "github.com/mattn/go-sqlite3"
 )
 
 func main() {
-	db, err := gorm.Open("sqlite3", "db.sqlite3")
+
+	// DBMS := "mysql"
+
+	// USER := "test"
+	// PASS := "passw0rd"
+	// PROTOCOL := "tcp(localhost:3306)"
+	// DBNAME := "test_db"
+	// CONNECT := USER + ":" + PASS + "@" + PROTOCOL + "/" + DBNAME + "?charset=utf8&parseTime=true&loc=Asia%2FTokyo"
+
+	// CONNECT := "test:passw0rd@tcp(localhost:3306)/test_db?charset=utf8&parseTime=true&loc=Asia%2FTokyo"
+
+	db, err := gorm.Open("mysql", "test:passw0rd@tcp(localhost:3306)/test_db?charset=utf8&parseTime=true&loc=Asia%2FTokyo")
 	if err != nil {
 		panic(err)
 	}
