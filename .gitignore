@@ -1,0 +1,6 @@
+# dotfiles
+.go-version
+.DS_Store
+
+# Binary
+web-db-docker
