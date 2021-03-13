@@ -33,12 +33,12 @@ $ docker-compose down && docker-compose up -d && docker-compose logs -f app
 * log 
 
 ```log
-(*'-') < docker-compose down && docker-compose up -d && docker-compose logs -f app
+$ docker-compose down && docker-compose up -d && docker-compose logs -f app
 Removing web-db-docker_app_1 ... done
 Removing network web-db-docker_default
 Creating network "web-db-docker_default" with the default driver
 Creating web-db-docker_app_1 ... done
 Attaching to web-db-docker_app_1
-app_1  | Hello world!
+app_1  | Hello world!  # <= とりあえずこれが出れば OK
 web-db-docker_app_1 exited with code 0
 ```
