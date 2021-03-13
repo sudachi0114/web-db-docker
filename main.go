@@ -4,22 +4,12 @@ import (
 	"fmt"
 
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/jinzhu/gorm"
+
+	"github.com/sudachi0114/web-db-docker/controller"
 )
 
 func main() {
-
-	// DBMS := "mysql"
-
-	// USER := "test"
-	// PASS := "passw0rd"
-	// PROTOCOL := "tcp(localhost:3306)"
-	// DBNAME := "test_db"
-	// CONNECT := USER + ":" + PASS + "@" + PROTOCOL + "/" + DBNAME + "?charset=utf8&parseTime=true&loc=Asia%2FTokyo"
-
-	// CONNECT := "test:passw0rd@tcp(localhost:3306)/test_db?charset=utf8&parseTime=true&loc=Asia%2FTokyo"
-
-	db, err := gorm.Open("mysql", "test:passw0rd@tcp(localhost:3306)/test_db?charset=utf8&parseTime=true&loc=Asia%2FTokyo")
+	db, err := controller.DBconnect()
 	if err != nil {
 		panic(err)
 	}
