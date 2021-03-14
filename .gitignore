@@ -8,4 +8,4 @@ bin/*
 
 # Database
 *.sqlite*
-db/*
+data/*
