@@ -4,3 +4,7 @@
 
 # Binary
 web-db-docker
+bin/*
+
+# sqlite
+*.sqlite*
