@@ -9,11 +9,13 @@ import (
 func main() {
 	r := gin.Default()
 
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
+	r.GET("/ping", responseByJson)
 
 	r.Run()
+}
+
+func responseByJson(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"message": "pong",
+	})
 }
