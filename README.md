@@ -142,3 +142,9 @@ app_1  | [GIN-debug] GET    /ping                     --> main.responseByJson (3
 app_1  | [GIN-debug] Environment variable PORT is undefined. Using port :8080 by default
 app_1  | [GIN-debug] Listening and serving HTTP on :8080
 ```
+
+## Links
+* [Go+MySQL+Dockerで簡単なCRUDを実装する](https://qiita.com/daiki-murakami/items/c8f9df8defc937e185ee)
+* [【第12回】Go言語（Golang）入門～MySQL接続編～](https://rightcode.co.jp/blog/information-technology/golang-introduction-mysql-connection)
+
+* [docker go image](https://hub.docker.com/_/golang)
