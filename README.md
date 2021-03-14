@@ -32,4 +32,15 @@ $ make compose/up
 ```shell
 $ curl http://localhost:8080/ping
 {"message":"pong"}
+
+$ curl http://localhost:8080/
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- (略) -->
+</head>
+<body>
+    <h1>Hello world!</h1>
+</body>
+</html>
 ```
