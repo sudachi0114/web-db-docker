@@ -117,3 +117,28 @@ root@d10a809d00ec:/#
 root@d10a809d00ec:/# exit
 exit
 ```
+
+* app と db の (簡易的な) 接続チェック
+
+```
+$ make compose/up
+
+$ docker-compose logs -f app
+Attaching to web-db-docker_app_1
+app_1  | # ... (途中 略)
+app_1  | Successed to connect MySQL Database!  # <= これが出ていれば OK!
+app_1  | [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+app_1  | 
+app_1  | [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+app_1  |  - using env:  export GIN_MODE=release
+app_1  |  - using code: gin.SetMode(gin.ReleaseMode)
+app_1  | 
+app_1  | [GIN-debug] Loaded HTML Templates (2): 
+app_1  |        - 
+app_1  |        - index.html
+app_1  | 
+app_1  | [GIN-debug] GET    /                         --> main.responseWithTemplate (3 handlers)
+app_1  | [GIN-debug] GET    /ping                     --> main.responseByJson (3 handlers)
+app_1  | [GIN-debug] Environment variable PORT is undefined. Using port :8080 by default
+app_1  | [GIN-debug] Listening and serving HTTP on :8080
+```
