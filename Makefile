@@ -3,7 +3,7 @@ build:
 	go build -o bin/main .
 
 .PHONY: clean
-clean:
+clean: compose/down
 	rm bin/main
 
 .PHONY: migrate
