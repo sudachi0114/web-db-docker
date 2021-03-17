@@ -3,8 +3,9 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/sudachi0114/web-db-docker/db"
+
 	"github.com/sudachi0114/web-db-docker/handler"
+	"github.com/sudachi0114/web-db-docker/repo"
 )
 
 func main() {
@@ -12,7 +13,7 @@ func main() {
 	DBMS := "mysql"
 	CONNECTION := "test:passw0rd@tcp(db:3306)/test_db?charset=utf8&parseTime=true&loc=Asia%2FTokyo"
 
-	db := db.Connect(DBMS, CONNECTION)
+	db := repo.Connect(DBMS, CONNECTION)
 	defer db.Close()
 
 	r := gin.Default()
