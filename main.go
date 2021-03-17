@@ -1,6 +1,8 @@
 package main
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
 
@@ -22,5 +24,13 @@ func main() {
 	r.GET("/", handler.ResponseWithTemplate)
 	r.GET("/ping", handler.ResponseByJson)
 
+	r.GET("/new_user", tmpResponce)
+
 	r.Run()
+}
+
+func tmpResponce(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Not Implemented",
+	})
 }
