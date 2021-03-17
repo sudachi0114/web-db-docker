@@ -139,7 +139,7 @@ app_1  | [GIN-debug] Listening and serving HTTP on :8080
 * `/` : `method:GET`
 
 ```shell
-curl localhost:8080/
+$ curl localhost:8080/
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -157,7 +157,7 @@ curl localhost:8080/
 * `/ping` : `method:GET`
 
 ```shell
-curl localhost:8080/ping
+$ curl localhost:8080/ping
 {"message":"pong"}
 ```
 
@@ -166,8 +166,8 @@ curl localhost:8080/ping
 * `/new_user` : `method:GET`
 
 ```shell
-curl localhost:8080/new_user
-{"message":"Not Implemented"}  # 未実装
+$ curl -X POST -H "Content-Type: application/json" -d '{"name":"sudachi", "email":"sudachi@example.com"}' localhost:8080/new_user
+
 ```
 
 
