@@ -32,17 +32,6 @@ $ make compose/up
 ```shell
 $ curl http://localhost:8080/ping
 {"message":"pong"}
-
-$ curl http://localhost:8080/
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <!-- (略) -->
-</head>
-<body>
-    <h1>Hello world!</h1>
-</body>
-</html>
 ```
 
 ## データベース
@@ -142,6 +131,45 @@ app_1  | [GIN-debug] GET    /ping                     --> main.responseByJson (3
 app_1  | [GIN-debug] Environment variable PORT is undefined. Using port :8080 by default
 app_1  | [GIN-debug] Listening and serving HTTP on :8080
 ```
+
+## エンドポイント
+
+### テスト用
+
+* `/` : `method:GET`
+
+```shell
+curl localhost:8080/
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web-db-docker</title>
+</head>
+<body>
+    <h1>Hello world!</h1>
+</body>
+</html>
+```
+
+* `/ping` : `method:GET`
+
+```shell
+curl localhost:8080/ping
+{"message":"pong"}
+```
+
+### アプリケーションサービスとしてのエンドポイント
+
+* `/new_user` : `method:GET`
+
+```shell
+curl localhost:8080/new_user
+{"message":"Not Implemented"}  # 未実装
+```
+
 
 ## Links
 * [Go+MySQL+Dockerで簡単なCRUDを実装する](https://qiita.com/daiki-murakami/items/c8f9df8defc937e185ee)
