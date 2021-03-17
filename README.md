@@ -176,3 +176,10 @@ $ curl -X POST -H "Content-Type: application/json" -d '{"name":"sudachi", "email
 * [【第12回】Go言語（Golang）入門～MySQL接続編～](https://rightcode.co.jp/blog/information-technology/golang-introduction-mysql-connection)
 
 * [docker go image](https://hub.docker.com/_/golang)
+
+* [GOのORMを分かりやすくまとめてみた【GORM公式ドキュメントの焼き回し】](https://qiita.com/gold-kou/items/45a95d61d253184b0f33#select)
+
+* [Go 構造体を JSON に変換する方法](https://www.delftstack.com/ja/howto/go/how-to-convert-go-struct-to-json/)
+* [Package json](https://golang.org/pkg/encoding/json/#Marshal)
+
+* [go-ginでサクッとRESTAPIを構築する](https://qiita.com/shiei_kawa/items/eddf48287455380f618f)

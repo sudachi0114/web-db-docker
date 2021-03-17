@@ -11,6 +11,18 @@ import (
 	"github.com/sudachi0114/web-db-docker/repo"
 )
 
+func GetAllUser(c *gin.Context) {
+	DBMS := "mysql"
+	CONNECTION := "test:passw0rd@tcp(db:3306)/test_db?charset=utf8&parseTime=true&loc=Asia%2FTokyo"
+	db := repo.Connect(DBMS, CONNECTION)
+	defer db.Close()
+
+	var users []models.User
+	db.Order("created_at asc").Find(&users)
+
+	c.JSON(http.StatusOK, users)
+}
+
 func CreateUser(c *gin.Context) {
 	DBMS := "mysql"
 	CONNECTION := "test:passw0rd@tcp(db:3306)/test_db?charset=utf8&parseTime=true&loc=Asia%2FTokyo"

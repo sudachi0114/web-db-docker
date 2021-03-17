@@ -24,6 +24,7 @@ func main() {
 	r.GET("/", handler.ResponseWithTemplate)
 	r.GET("/ping", handler.ResponseByJson)
 
+	r.GET("/get_all_users", handler.GetAllUser)
 	r.POST("/new_user", handler.CreateUser)
 
 	r.Run()
