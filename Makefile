@@ -6,6 +6,10 @@ build:
 clean:
 	rm bin/main
 
+.PHONY: migrate
+migrate: compose/up
+	docker-compose exec app go run /app/tools/db/migrate.go
+
 .PHONY: compose/up
 compose/up: compose/up/db
 	docker-compose up -d app
