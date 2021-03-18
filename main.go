@@ -24,10 +24,12 @@ func main() {
 	r.GET("/", handler.ResponseWithTemplate)
 	r.GET("/ping", handler.ResponseByJson)
 
-	r.GET("/get_all_users", handler.GetAllUser)
 	r.POST("/new_user", handler.CreateUser)
+
+	r.GET("/get_all_users", handler.GetAllUser)
 	r.GET("/get_user/:id", handler.GetUser)
-	// r.POST("/get_user/:id", handler.GetUser)
+
+	r.GET("/delete/:id", handler.DeleteUser)
 
 	r.Run()
 }

@@ -171,7 +171,7 @@ $ curl -X POST -H "Content-Type: application/json" -d '{"name":"sudachi", "email
 
 ```
 
-* `/get_user` : `method:POST`
+* `/get_user/:id` : `method:GET`
 
 ```shell
 $ curl localhost:8080/get_user/{{user_id}}
@@ -186,6 +186,16 @@ $ curl localhost:8080/get_user/1
 ```shell
 $ curl localhost:8080/get_all_users
 [{"ID":1,"CreatedAt":"2021-03-17T15:28:15+09:00","UpdatedAt":"2021-03-17T15:28:15+09:00","DeletedAt":null,"name":"sudachi","email":"sudachi@example.com"}, ...]
+```
+
+* `/delete/:id` : `method:GET`
+
+```shell
+$ curl localhost:8080/delete/{{user_id}}
+
+# example
+$ curl localhost:8080/delete/1
+{"message":"Delete Completed"}
 ```
 
 

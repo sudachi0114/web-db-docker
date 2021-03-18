@@ -11,18 +11,7 @@ import (
 	"github.com/sudachi0114/web-db-docker/repo"
 )
 
-func GetAllUser(c *gin.Context) {
-	DBMS := "mysql"
-	CONNECTION := "test:passw0rd@tcp(db:3306)/test_db?charset=utf8&parseTime=true&loc=Asia%2FTokyo"
-	db := repo.Connect(DBMS, CONNECTION)
-	defer db.Close()
-
-	var users []models.User
-	db.Order("created_at asc").Find(&users)
-
-	c.JSON(http.StatusOK, users)
-}
-
+// C(reate)
 func CreateUser(c *gin.Context) {
 	DBMS := "mysql"
 	CONNECTION := "test:passw0rd@tcp(db:3306)/test_db?charset=utf8&parseTime=true&loc=Asia%2FTokyo"
@@ -43,6 +32,19 @@ func CreateUser(c *gin.Context) {
 	})
 }
 
+// R(ead)
+func GetAllUser(c *gin.Context) {
+	DBMS := "mysql"
+	CONNECTION := "test:passw0rd@tcp(db:3306)/test_db?charset=utf8&parseTime=true&loc=Asia%2FTokyo"
+	db := repo.Connect(DBMS, CONNECTION)
+	defer db.Close()
+
+	var users []models.User
+	db.Order("created_at asc").Find(&users)
+
+	c.JSON(http.StatusOK, users)
+}
+
 func GetUser(c *gin.Context) {
 	DBMS := "mysql"
 	CONNECTION := "test:passw0rd@tcp(db:3306)/test_db?charset=utf8&parseTime=true&loc=Asia%2FTokyo"
@@ -57,4 +59,31 @@ func GetUser(c *gin.Context) {
 
 	log.Println(user)
 	c.JSON(http.StatusOK, user)
+}
+
+// U(pdate)
+
+// D(elete)
+func DeleteUser(c *gin.Context) {
+	DBMS := "mysql"
+	CONNECTION := "test:passw0rd@tcp(db:3306)/test_db?charset=utf8&parseTime=true&loc=Asia%2FTokyo"
+	db := repo.Connect(DBMS, CONNECTION)
+	defer db.Close()
+
+	id := c.Param("id")
+	log.Println("delete user id = ", id)
+
+	var user models.User
+	db.First(&user, id)
+	log.Println(user)
+
+	// gorm.DB の Delete メソッドを呼ぶと
+	//	gorm.Model の DeletedAt に日時が入り、これが入っていると削除として扱われる
+	//	(論理削除になる。 ref:https://qiita.com/gold-kou/items/45a95d61d253184b0f33#delete)
+	db.Delete(&user)
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Delete Completed",
+	})
+
 }
