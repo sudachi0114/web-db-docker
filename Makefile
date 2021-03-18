@@ -12,6 +12,7 @@ migrate: compose/up
 
 .PHONY: compose/up
 compose/up: compose/up/db
+	docker-compose build 
 	docker-compose up -d app
 
 .PHONY: compose/up/db
