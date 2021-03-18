@@ -7,18 +7,19 @@ Go を用いた web アプリケーションの作成。
 docker contaienr でアプリケーションと、データベースを作成し、
 それらがやりとりしてサービスが動作することを当面の目標にしておべんきょする。
 
-<!--
-## ライブラリ
-
-* GORM (ORM); `github.com/jinzhu/gorm`
-* Database driver (mysql); `github.com/go-sql-driver/mysql`
--->
 
 ## Requires
 
 * Go
 * git
 * docker (docker-compose)
+
+## ライブラリ
+
+* GORM (ORM); `github.com/jinzhu/gorm`
+* Database driver (mysql); `github.com/go-sql-driver/mysql`
+* [air](https://github.com/cosmtrek/air#usage) : ソースコード変更を docker でホットリロード (ライブリロード) するのに利用
+
 
 
 ## アプリケーションの起動

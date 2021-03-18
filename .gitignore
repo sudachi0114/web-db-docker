@@ -6,6 +6,9 @@
 web-db-docker
 bin/*
 
+# tmp
+tmp/
+
 # Database
 *.sqlite*
 data/*
