@@ -171,6 +171,23 @@ $ curl -X POST -H "Content-Type: application/json" -d '{"name":"sudachi", "email
 
 ```
 
+* `/get_user` : `method:POST`
+
+```shell
+$ curl localhost:8080/get_user/{{user_id}}
+
+# example
+$ curl localhost:8080/get_user/1
+{"ID":1,"CreatedAt":"2021-03-17T15:28:15+09:00","UpdatedAt":"2021-03-17T15:28:15+09:00","DeletedAt":null,"name":"sudachi","email":"sudachi@example.com"}
+```
+
+* `/get_all_user` : `method:GET`
+
+```shell
+$ curl localhost:8080/get_all_users
+[{"ID":1,"CreatedAt":"2021-03-17T15:28:15+09:00","UpdatedAt":"2021-03-17T15:28:15+09:00","DeletedAt":null,"name":"sudachi","email":"sudachi@example.com"}, ...]
+```
+
 
 ## Links
 * [Go+MySQL+Dockerで簡単なCRUDを実装する](https://qiita.com/daiki-murakami/items/c8f9df8defc937e185ee)

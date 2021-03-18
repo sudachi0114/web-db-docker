@@ -26,6 +26,8 @@ func main() {
 
 	r.GET("/get_all_users", handler.GetAllUser)
 	r.POST("/new_user", handler.CreateUser)
+	r.GET("/get_user/:id", handler.GetUser)
+	// r.POST("/get_user/:id", handler.GetUser)
 
 	r.Run()
 }

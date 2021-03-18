@@ -42,3 +42,19 @@ func CreateUser(c *gin.Context) {
 		"message": "Accept Request",
 	})
 }
+
+func GetUser(c *gin.Context) {
+	DBMS := "mysql"
+	CONNECTION := "test:passw0rd@tcp(db:3306)/test_db?charset=utf8&parseTime=true&loc=Asia%2FTokyo"
+	db := repo.Connect(DBMS, CONNECTION)
+	defer db.Close()
+
+	id := c.Param("id")
+	log.Println("get user id = ", id)
+
+	var user models.User
+	db.Where("id = ?", id).First(&user) // SELECT * FROM users WHERE id = `id` LIMIT 1
+
+	log.Println(user)
+	c.JSON(http.StatusOK, user)
+}
